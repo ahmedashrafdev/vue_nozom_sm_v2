@@ -1,0 +1,100 @@
+.main {
+  width: 100vw;
+  min-height: 100vh;
+  background-image: url("~@/assets/images/home-bg.png");
+  background-position: bottom right;
+  background-size: cover;
+}
+
+.main__wrapper {
+  padding: 10px;
+}
+
+.main__logo {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main__logo img {
+  max-width: 300px;
+  margin-right: auto;
+}
+
+.main__title {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.main__title h2 {
+  font-size: 18px;
+}
+
+.main__tabs {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  margin-bottom: 10px;
+}
+
+.main__tabs .tab {
+  width: 100%;
+  max-height: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  cursor: pointer;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 24px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #fff;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.main__tabs .tab .v-icon {
+  color: #fff !important;
+}
+
+.main__tabs .tab-text {
+  text-align: center;
+}
+
+@media (max-width: 241px) {
+  .main__tabs .tab-text {
+    font-size: 14px !important;
+  }
+}
+
+.main__footer {
+  direction: ltr;
+}
+
+.main__footer .date-time {
+  color: #fff;
+  text-align: left;
+}
+
+.main__footer .date-time .time {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.main__footer .date-time small {
+  font-size: 16px;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,55 @@
+:root{
+    --primary-color : rgb(70, 130, 180);
+}
+@font-face {
+    font-family: "Frutiger";
+    src: local("Frutiger"),   url('~@/assets/fonts/Frutiger-LT-Arabic-55-Roman.ttf');
+}
+@font-face {
+    font-family: "Cent";
+    src: local("Cent"),   url('~@/assets/fonts/CenturyGothic.ttf');
+}
+html{
+    direction: rtl;
+}
+body , h1 , h2 , h3 , p , span , *{
+    font-family: "Frutiger" !important;
+}
+.pointer{
+    cursor: pointer !important;
+}
+
+.v-text-field__details{
+    height: 30px;
+}
+.code .v-messages__message{
+    color: var(--primary-color);
+    font-size: 20px;
+}
+.v-app-bar , .v-app-bar .v-icon{
+    color: #fff !important;
+}
+.text-danger{
+    color: rgb(233, 59, 59);
+    padding-right: 10px;
+    margin-bottom: 10xp;
+}
+.text-center{
+    text-align: center;
+}
+.w-full{
+    width:100%;
+}
+
+tbody  tr.v-data-table__mobile-table-row td:first-child{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+.mt-2{
+    margin-top: 10px;
+}
+.bg-primary{
+    background-color: var(--primary-color);
+    color:#fff;
+    padding-right: 10px;
+}
