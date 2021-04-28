@@ -19,7 +19,7 @@
                                 :rules="rules.code"
                                 label="الكود"
                                 v-model="form.ItmBarCode"
-                                autofocus
+                                dense
                                 @keyup.enter="findItem"
                                 class="code"
                                 :messages="item.ItemName"
@@ -38,11 +38,11 @@
                         <v-list-item>
                             <v-row>
                                 <v-col cols="6">
-                                    <v-text-field  @input="validateQtyWhole" :error="qtyWholeNotInt" :error-messages="qtyErrors.qtyWhole" v-if="item && !item.ByWeight" @keyup.enter="$refs.qty.focus()" :rules="rules.qtyWhole" v-model="qtyWhole" label="الكمية الكلية" ref="qtyWhole" solo></v-text-field>
-                                    <v-text-field  @input="validateQtyWhole"  v-else @keyup.enter="save()" :rules="rules.qtyWhole" v-model="qtyWhole" label="الكمية الكلية" ref="qtyWhole" solo></v-text-field>
+                                    <v-text-field dense  @input="validateQtyWhole" :error="qtyWholeNotInt" :error-messages="qtyErrors.qtyWhole" v-if="item && !item.ByWeight" @keyup.enter="$refs.qty.focus()" :rules="rules.qtyWhole" v-model="qtyWhole" label="الكمية الكلية" ref="qtyWhole" solo></v-text-field>
+                                    <v-text-field dense  @input="validateQtyWhole"  v-else @keyup.enter="save()" :rules="rules.qtyWhole" v-model="qtyWhole" label="الكمية الكلية" ref="qtyWhole" solo></v-text-field>
                                 </v-col>
                                 <v-col cols="6"  v-if="item && !item.ByWeight">
-                                    <v-text-field @input="validateQty" :error="qtyNotInt" :error-messages="qtyErrors.qty" @keyup.enter="save()" :rules="rules.qty" v-model="qty" label="الكمية الجزءية" ref="qty" solo></v-text-field>
+                                    <v-text-field dense @input="validateQty" :error="qtyNotInt" :error-messages="qtyErrors.qty" @keyup.enter="save()" :rules="rules.qty" v-model="qty" label="الكمية الجزءية" ref="qty" solo></v-text-field>
                                 </v-col>
 
                             </v-row>

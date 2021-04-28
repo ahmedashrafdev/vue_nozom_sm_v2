@@ -7,18 +7,20 @@
         <v-toolbar-title>
           {{pageTitle}}
         </v-toolbar-title>
+        <v-spacer/>
+        <v-toolbar-items>
+          <v-btn block @click.prevent="closeDocument" text>
+        <span style="color:#fff; font-size:20px">غلق المستد</span>
+        <v-icon>mdi-save</v-icon>
+        </v-btn>
+        </v-toolbar-items>
         </v-app-bar>
 
         <v-main>
             <nuxt />
         </v-main>
 
-    <v-bottom-navigation app :value="value" >
-        <v-btn block @click.prevent="closeDocument" color="primary">
-        <span style="color:#fff; font-size:20px">حفظ</span>
-        <v-icon>mdi-save</v-icon>
-        </v-btn>
-    </v-bottom-navigation>
+
     </v-app>
     
 </template>

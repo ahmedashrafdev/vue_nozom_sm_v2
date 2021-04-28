@@ -35,13 +35,18 @@
             </template>
             <template v-slot:[`item.actions`]="{ item }">
               <span v-if="item.closed"></span>
-                <v-icon
+                    
+              <v-btn color="primary"  class="mr-2"
+                    @click="editItem(item)">
+                     <v-icon
                     small
-                    class="mr-2"
-                    @click="editItem(item)"
+                   
                 >
                     mdi-pencil
                 </v-icon>
+                تعديل
+              </v-btn>
+               
                 </template>
           </v-data-table>
         </v-card>
