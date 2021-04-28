@@ -13,11 +13,11 @@ export default {
   },
   mounted(){
     !localStorage.getItem('device') 
-    ? localStorage.setItem('device' ,1)
+    ? localStorage.setItem('device' ,this.$config.device)
     : ''
 
     !localStorage.getItem('store') 
-    ? localStorage.setItem('store' ,1)
+    ? localStorage.setItem('store' ,this.$config.store)
     : ''
   }
 }

@@ -4,7 +4,9 @@ export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
   publicRuntimeConfig: {
-    apiUrl: process.env.API_URL || '192.168.1.40:8585'
+    apiUrl: process.env.API_URL || '192.168.1.40:8585',
+    device: process.env.DEVICE || 1,
+    store: process.env.STORE || 1
   },
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -30,6 +32,10 @@ export default {
    css: [
     '@/assets/scss/global.css',
   ],
+
+  server :{
+    host: "192.168.1.40",
+  },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
@@ -57,7 +63,8 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
+      rtl: true,
       themes: {
         dark: {
           primary: colors.blue.darken2,

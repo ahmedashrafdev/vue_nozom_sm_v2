@@ -12,7 +12,7 @@
                         ref="code"
                         :rules="rules.code"
                         label="الكود"
-                        v-model="form.ItmBarCode"
+                        v-model="form.BCode"
                         autofocus
                         @keyup.enter="findItem"
                         class="code"
@@ -73,7 +73,6 @@
 
 <script>
 
-import {mapGetters} from 'vuex'
 import {codeValidation} from '@/utils/helpers.js'
 export default {
     layout:'pages',
@@ -81,23 +80,25 @@ export default {
       return {
         valid: false,
         notFoundItem: false,
+        item : {},
         rules : {
             code : codeValidation
-         },
+        },
+        form :{
+            BCode : null,
+        }
       }
     },
     methods : {
         findItem(){
-            if(this.form.code !== ''){
-                const itemPayload = {"BCode" :this.form.ItmBarCode,"StoreCode" : parseInt(this.$route.query.store)}
-                this.$store.dispatch('item/get' , itemPayload)
+            console.log('asd')
+            if(this.form.BCode !== ''){
+                this.$store.dispatch('item/get' , this.form)
             .then(res => {
                 if(res !== null){
                     this.item = res[0] 
-                    this.form.ItmS = res[0].Serial
-                    this.$refs.qtyWhole.focus()
+                    // this.form.ItmS = res[0].Serial
                     this.notFoundItem = false
-
                 } else {
                     this.notFoundItem = true
                     this.item = {}
@@ -109,13 +110,10 @@ export default {
         },
         
     },
-    computed: {
-        ...mapGetters({
-            tabsHeaders : 'ui/tabsHeaders'
-        })
-    },
+    
     created(){
-        this.$store.commit('ui/pageTitle' , 'مشتريات')
+
+        this.$store.commit('ui/pageTitle' , 'رصيد اول مدة')
     },
 }
 </script>

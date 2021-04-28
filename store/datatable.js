@@ -41,6 +41,8 @@ export const actions = {
     getOpenDocs(ctx, payload) {
         ctx.commit("setLoading", true);
         // commit(mutations.setLoading, true);
+        payload.DevNo = parseInt(localStorage.getItem('device'))
+        payload.StCode = parseInt(localStorage.getItem('store'))
         return new Promise((resolve, reject) => {
           http.post("get-docs", payload)
             .then((res) => {

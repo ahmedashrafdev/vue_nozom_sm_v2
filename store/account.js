@@ -28,10 +28,15 @@ export const getters = {
 export const actions = {
     get({commit} , payload) {
         commit('setLoading' , true)
+        payload.StoreCode = parseInt(localStorage.getItem('store'))
         return new Promise((resolve, reject) => {
             http
             .post("get-account" , payload)
             .then(res => {
+                console.log(res.data)
+            if(res.data == null){
+                res.data = []
+            }
                 commit('setAccounts' , res.data)
                 commit('setLoading' , false)
                 resolve(res.data);

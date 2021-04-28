@@ -82,14 +82,7 @@ export const state = () => ({
           type : -1,
         },
         
-        {
-          icon : 'mdi-cog',
-          text : 'طباعة ملصق الرف',
-          transSerial: '',
-          link : '',
-          accountType :-1,
-          type : -1,
-        },
+        
         {
           icon : 'mdi-cog-outline',
           text : "الاعدادات",
@@ -98,14 +91,7 @@ export const state = () => ({
           accountType :-1,
           type : -1,
         },
-        {
-          icon : 'mdi-logout-variant',
-          text : "تسجيل الخروج",
-          transSerial: '',
-          link : 'logout',
-          accountType :-1,
-          type : -1,
-        }
+        
       ]
   })
   

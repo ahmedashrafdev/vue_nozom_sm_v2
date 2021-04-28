@@ -31,6 +31,7 @@ export const getters = {
 export const actions = {
     get({commit} , payload) {
         commit('loading' , true)
+        payload.StoreCode = parseInt(localStorage.getItem('store'))
         return new Promise((resolve, reject) => {
             http
             .post("get-item" , payload)

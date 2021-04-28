@@ -35,17 +35,19 @@ export default {
   methods :{
     goTo(tab){
       if(tab.link == 'trolley-check'){
-        this.$router.push({name : 'trolley-check' , query :{ store : localStorage.getItem('store')}})
-      } else if (tab.link == 'first') {
-        this.$router.push({name : 'grid-open' , query : {transaction : tab.transSerial , type : tab.type , accountType : tab.accountType}})
-      } else if (tab.link === 'settings'){
+        this.$router.push({name : 'trolley-check'})
+        return
+      } 
+      if (tab.link === 'settings'){
         this.$router.push({name : "settings"})
-      }else if (tab.link === 'logout'){
-        document.localStorage.removeItem('auth._token.local')
-         this.$router.push({name : "login"})
-      } else {
-        this.$router.push({name : 'grid-open' , query : {transaction : tab.transSerial , type : tab.type , accountType : tab.accountType}})
+        return
+      } 
+      const query = {
+        accountType : tab.accountType,
+        type : tab.type,
       }
+      this.$router.push({name : 'documents-transaction' , params : {transaction : tab.transSerial} , query})
+      
     }
   },
   
