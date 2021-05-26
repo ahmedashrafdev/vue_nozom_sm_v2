@@ -177,7 +177,7 @@ export default {
         form :  {
             DNo :  parseInt(this.$route.params.doc),
             TrS : parseInt(this.$route.params.transaction),
-            AccS : parseInt(this.$route.query.supplier),
+            AccS : parseInt(this.$route.query.accSerial),
             ItmS : "",
             Qnt : "",
             StCode : parseInt(localStorage.getItem('store')),
@@ -256,16 +256,13 @@ export default {
         },
         save(){
             this.byWeightValidation()
-            console.log('save')
             if(!this.qtyNotInt  && !this.qtyWholeNotInt){
                 this.valid = true
             } else { 
                 this.valid = false
             }
             this.$refs.form.validate()
-            if(this.valid){
-                console.log('save')
-                
+            if(this.valid){                
                     if(this.qty == null){
                         this.qty = 0
                     }

@@ -136,14 +136,11 @@ import { mapGetters , mapMutations } from 'vuex'
       },
       save(){
         const payload = { "TrSerial" : parseInt(this.$route.params.transaction) }
-        console.log(payload)
         let params = {doc : null , transaction : this.$route.params.transaction}
         this.$store.dispatch('document/getNo' , payload)
             .then(res => {
-              console.log('res')
-              console.log(res)
               params.doc = res
-        this.$router.push({name:'documents-transaction-doc' , params , query : this.query})
+              this.$router.push({name:'documents-transaction-doc' , params , query : this.query})
             })
               // console.log(params)
       },
