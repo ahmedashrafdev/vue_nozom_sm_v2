@@ -13,7 +13,7 @@ export const mutations = {
     },
     
 }
-
+//sync
   
 export const getters = {
     loading(state) {
