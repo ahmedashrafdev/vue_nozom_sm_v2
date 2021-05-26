@@ -182,7 +182,7 @@ export default {
             Qnt : "",
             StCode : parseInt(localStorage.getItem('store')),
             StCode2 : parseInt(this.$route.query.storeTo),
-            InvNo : parseInt(this.$route.query.invoice),
+            InvNo : parseInt(this.$route.query.invoiceNo),
             ItmBarCode : "",
             DevNo : parseInt(localStorage.getItem('device')),
         },

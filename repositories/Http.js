@@ -1,7 +1,7 @@
 import axios from "axios";
 import Vue from 'vue'
 const api = axios.create ({
-    baseURL: 'http://192.168.1.40:8585/api/',
+    baseURL: 'http://192.168.1.167:8585/api/',
     headers: { 'Accept': 'application/json'}
 })
 
